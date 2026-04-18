@@ -11,6 +11,7 @@ public class Player {
 	private double currentXp = 0;
 	private double nextLevelXp = 100;
 	private Weapon equippedWeapon;
+	private int activeShadows = 0;
 	
 	public Player(String name) {
 		this.name = name;
@@ -18,16 +19,22 @@ public class Player {
 		this.currentHp = getMaxHp();
 	}
 	
+	// stats using for combats including Raids and Dungeons
 	public double getMaxHp() {
 		return 100 + (vit * 15.5);
 	}
 	public double getDamage() {
-		return equippedWeapon.getDamage() + (str * 2.5);
+		return equippedWeapon.getDamage() + (str * 2.5) + (activeShadows * 5.0);
 	}
 	public double getDodgeChance() {
 		return Math.min(agi * 0.15, 45.0);
 	}
 	
+	public double getCritChance() {
+		return Math.min(sen * 0.15, 75.0);
+	}
+	
+	//System of levelUp
 	public void gainXp(double amount) {
 		this.currentXp += amount;
 		while (this.currentXp >= nextLevelXp) {
@@ -71,6 +78,10 @@ public class Player {
 		return currentHp > 0;
 	}
 	
+	public void addShadow() {
+		this.activeShadows++;
+		System.out.println("Extraction Completed: Army of Shadows: " + activeShadows);
+	}
 	
 	//getters
 	public int getLevel() {
@@ -128,5 +139,9 @@ public class Player {
 	
 	public int getYen() {
 		return yen;
+	}
+	
+	public int getManaCrystals() {
+		return manaCrystals;
 	}
 }
