@@ -37,4 +37,11 @@ public class Inventory {
 			System.out.println((i+1) + ". " + items[i].toString());
 		}
 	}
+	
+	public Weapon getWeapon(int index) {
+		if(index >= 0 && index < count) {
+			return items[index];
+		}
+		return null;
+	}
 }

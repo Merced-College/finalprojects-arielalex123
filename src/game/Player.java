@@ -78,6 +78,11 @@ public class Player {
 		this.statPoints++;
 	}
 	
+	public void setWeapon(Weapon w) {
+		this.equippedWeapon = w;
+		System.out.println(" You equipped: " + w.getName());
+	}
+	
 	public void takeDamage(double dmg) {
 		this.currentHp = Math.max(0, this.currentHp - dmg);
 	}
