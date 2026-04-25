@@ -95,8 +95,13 @@ public class GameController {
             
             if (player.isAlive() && !fled) {
                 System.out.println("You defeat " + enemy.getName());
-                if (enemy.getRank().equals("S") && engine.tryArise("S")) {
-                    player.addShadow();
+                if (enemy.isBoss()) {
+                	System.out.println(" Attempting Shadow Extraction... ");
+                	if(engine.tryArise(enemy.getRank())) {
+                		player.addShadow();
+                	}
+                	else 
+                		System.out.println(" Shadow Extraction Failed. ");
                 }
                 currentWave = currentWave.getNext();
             }
@@ -156,7 +161,7 @@ public class GameController {
 		boolean inInventory = true;
 		while(inInventory) {
 			inventory.displayInventory();
-			System.out.println("\n1. Equip Weapon | 2. Sort by Damage | 3. Leave");
+			System.out.println("\n1. Equip Weapon | 2. Sort by Damage | 3. Upgrade Weapon (Cost: 5 Mana Crystals) | 4. Leave ");
 			int choice = scnr.nextInt();
 			
 			if (choice == 1) {
@@ -165,11 +170,18 @@ public class GameController {
 				Weapon selected = inventory.getWeapon(idx - 1);
 				if (selected != null) {
 					player.setWeapon(selected);
-				} else {
+				} 
+				else {
 					System.out.println("Invalid selection.");
 				}
-			} else if (choice == 2) {
+			} 
+			else if (choice == 2) {
 				inventory.sortByDamage();
+			}
+			else if (choice == 3) {
+				if(player.spendManaCrystals(5)) {
+					player.getWeapon().upgradeWeapon();
+				}
 			} else {
 				inInventory = false;
 			}

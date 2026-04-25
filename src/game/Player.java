@@ -100,6 +100,14 @@ public class Player {
 		System.out.println("Extraction Completed: Army of Shadows: " + activeShadows);
 	}
 	
+	public boolean spendManaCrystals(int amount) {
+		if(this.manaCrystals >= amount) {
+			this.manaCrystals -= amount;
+			return true;
+		}
+		return false;
+	}
+	
 	//getters
 	public int getLevel() {
 		return level;
