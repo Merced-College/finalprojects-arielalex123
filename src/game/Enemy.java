@@ -13,12 +13,27 @@ public class Enemy {
 		this.isBoss = isBoss;
 	}
 	
-	public void takeDamage(double dmg) { this.hp = Math.max(0, this.hp - dmg); }
-	public boolean isAlive() { return hp > 0; }
+	public void takeDamage(double dmg) { 
+		this.hp = Math.max(0, this.hp - dmg); 
+		}
 	
-	public String getName() { return name; }
-	public double getHp() { return hp; }
-	public double getAttack() { return attack; }
-	public String getRank() { return rank; }
-	public boolean isBoss() { return isBoss; }
+	public boolean isAlive() { 
+		return hp > 0; 
+		}
+	
+	public String getName() { 
+		return name; 
+		}
+	public double getHp() { 
+		return hp; 
+		}
+	public double getAttack() { 
+		return attack; 
+		}
+	public String getRank() { 
+		return rank; 
+		}
+	public boolean isBoss() { 
+		return isBoss; 
+		}
 }
