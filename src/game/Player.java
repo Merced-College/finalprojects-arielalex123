@@ -3,7 +3,7 @@ package game;
 public class Player {
 	private String name;
 	private int level = 1;
-	private int str = 1, agi = 1, vit = 1, intel = 1, sen = 1;
+	private int str = 5, agi = 5, vit = 0, intel = 5, sen = 5;
 	private int statPoints = 0;
 	private double currentHp;
 	private int yen = 0;
@@ -64,6 +64,18 @@ public class Player {
 		}
 		statPoints--;
 		return true;
+	}
+	
+	public boolean spendYen(int amount) {
+		if(this.yen >= amount) {
+			this.yen -= amount;
+			return true;
+		}
+		return false;
+	}
+	
+	public void gainStatPoint() {
+		this.statPoints++;
 	}
 	
 	public void takeDamage(double dmg) {
