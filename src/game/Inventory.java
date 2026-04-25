@@ -31,6 +31,26 @@ public class Inventory {
 		System.out.println(">>> Inventory sorted by Damage! <<<");
 	}
 	
+	public Weapon searchByDamage(double targetDamage) {
+		int left = 0;
+		int right = count - 1;
+		
+		while (left <= right) {
+			int mid = left + (right - left) / 2;
+			
+			if (items[mid].getDamage() == targetDamage) {
+				return items[mid];
+			}
+			
+			if (items[mid].getDamage() < targetDamage) {
+				left = mid + 1;
+			} else {
+				right = mid - 1;
+			}
+		}
+		return null;
+	}
+	
 	public void displayInventory() {
 		System.out.println("\n--- INVENTORY ---");
 		for (int i = 0; i < count; i++) {

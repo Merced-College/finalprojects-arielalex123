@@ -62,6 +62,10 @@ public class GameController {
 	
 	private void startBattle() {
 		DungeonNode currentWave = dungeonManager.generateDungeon(player.getLevel());
+		int totalEnemies = dungeonManager.countDungeonDepth(currentWave);
+	    System.out.println("\n[SYSTEM] Scanning Dungeon...");
+	    System.out.println("[SYSTEM] Detected " + totalEnemies + " enemies ");
+	    
 		boolean fled = false;
 		while (currentWave != null && player.isAlive() && !fled) {
 			Enemy enemy = currentWave.getEnemy();
@@ -161,7 +165,7 @@ public class GameController {
 		boolean inInventory = true;
 		while(inInventory) {
 			inventory.displayInventory();
-			System.out.println("\n1. Equip Weapon | 2. Sort by Damage | 3. Upgrade Weapon (Cost: 5 Mana Crystals) | 4. Leave ");
+			System.out.println("1. Equip | 2. Sort (Selection) | 3. Search (Binary) | 4. Upgrade | 5. Leave");
 			int choice = scnr.nextInt();
 			
 			if (choice == 1) {
@@ -179,6 +183,19 @@ public class GameController {
 				inventory.sortByDamage();
 			}
 			else if (choice == 3) {
+				System.out.println("Binary Search");
+		        System.out.print("Exact Damage to find");
+		        double damage = scnr.nextDouble();
+		        
+		        Weapon found = inventory.searchByDamage(damage);
+		        
+		        if (found != null) {
+		            System.out.println("¡Weapon Finded!: " + found.toString());
+		        } else {
+		            System.out.println("There is not any weapon");
+		        }
+			}
+			else if (choice == 4) {
 				if(player.spendManaCrystals(5)) {
 					player.getWeapon().upgradeWeapon();
 				}
