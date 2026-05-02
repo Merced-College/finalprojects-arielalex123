@@ -1,3 +1,9 @@
+/*
+Author: Ariel Penaloza
+Class: Training.java
+Description: The daily training quest, giving experience points 
+*/
+
 package game;
 
 public class Training {
@@ -16,7 +22,7 @@ public class Training {
 		int lvl = player.getLevel();
 		
 		if(choice == 1) {
-			player.gainXp(50);
+			player.gainXp(500000);
 			dailyCompleted = true;
 			return "Pushups Completed. +50 XP";
 		}

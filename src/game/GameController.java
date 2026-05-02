@@ -1,3 +1,13 @@
+/*
+Author: Ariel Penaloza
+Class: GameController.java
+Description: The central controller class that have the whole game in loop, the user input scanner, menu navigation and combat logic.
+Source: https://www.youtube.com/watch?v=GB3pgc9PCmc / https://stackoverflow.com/questions/18283199/java-main-game-loop
+Modified by: Ariel Penaloza
+Changes: Structure, logic, the use of while to make it more easier.
+*/
+
+
 package game;
 import java.util.Scanner;
 public class GameController {
@@ -56,7 +66,7 @@ public class GameController {
 		System.out.println("\n================ SOLO LEVELING SYSTEM ================");
 		System.out.println("Hunter: " + player.getName() + " Level: " + player.getLevel() + " Exp: " + player.getCurrentXp() + " / " + player.getNextLevelXp());
 		System.out.println("HP: " + player.getCurrentHp() + " / " + player.getMaxHp());
-		System.out.println("Yen: " + player.getYen() + " Mana Crystals: " + player.getManaCrystals());
+		System.out.println("Yen: " + player.getYen() + " ¥ " + "| Mana Crystals: " + player.getManaCrystals());
 		System.out.println("------------------------------------------------------");
 	}
 	
@@ -140,9 +150,11 @@ public class GameController {
 	        System.out.println("3. HEALTH ("+player.getVit()+")");
 	        System.out.println("4. INTELLIGENCE ("+player.getIntel()+")");
 	        System.out.println("5. STAMINA ("+player.getSen()+")");
+	        System.out.println("6. Leave ");
 	        int stat = scnr.nextInt();
 	        
-	        if(stat == 0) {
+	        
+	        if(stat == 6) {
 	        	upgrading = false;
 	        }
 	        else {
@@ -157,6 +169,7 @@ public class GameController {
 		        		upgrading = false;
 		        	}
 		        }
+		      
     		}
 	    }//end while
     }//end manageStats

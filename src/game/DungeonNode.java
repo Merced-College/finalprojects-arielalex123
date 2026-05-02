@@ -1,3 +1,12 @@
+/*
+Author: Ariel Penaloza
+Class: DungeonNode.java
+Description: The node for the linked list data structure, the enemy next node in the dungeon
+Source: https://www.geeksforgeeks.org/dsa/linked-list-data-structure/
+Modified by: Ariel Penaloza
+Changes: Enemy as an object to create a custom node for the waves
+*/
+
 package game;
 
 public class DungeonNode {

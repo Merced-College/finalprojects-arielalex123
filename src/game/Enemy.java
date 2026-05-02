@@ -1,3 +1,12 @@
+/*
+Author: Ariel Penaloza
+Class: Enemy.java
+Description: Similar as player class, but for enemies and bosses for dungeons, storing stats and boss status
+Source: https://medium.com/codex/object-oriented-principles-explained-2d1d4bdd3be7
+Modified by: Ariel Penaloza
+Changes: The use of getters and setters the logic and scale for stadistics like player class
+*/
+
 package game;
 
 public class Enemy {

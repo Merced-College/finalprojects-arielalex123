@@ -1,3 +1,12 @@
+/*
+Author: Ariel Penaloza
+Class: Weapon.java
+Description: Equippable items that increase damage and the upgrade the weapon
+Source: https://medium.com/codex/object-oriented-principles-explained-2d1d4bdd3be7
+Modified by: Ariel Penaloza
+Changes: Use of getters and setters
+*/
+
 package game;
 
 public class Weapon {

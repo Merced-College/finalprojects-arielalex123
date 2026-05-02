@@ -1,3 +1,12 @@
+/*
+Author: Ariel Penaloza
+Class: DungeonManager.java
+Description: The generation of dungeon waves using Linked List structure, also contains a recursive algorithm to calculate the total depth of the dungeon.
+Source: https://www.geeksforgeeks.org/java/recursion-in-java/ // https://www.geeksforgeeks.org/java/linked-list-in-java/
+Modified by: Ariel Penaloza
+Changes: Created a custom DungeonNode class to link Enemy objects as sequential dungeon waves, and built a recursive method to calculate the depth of the dungeon list dynamically.
+*/
+
 package game;
 
 public class DungeonManager {

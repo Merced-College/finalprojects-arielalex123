@@ -1,3 +1,12 @@
+/*
+Author: Ariel Penaloza
+Class: Shop.java
+Description: The shop where using HashMap to create items separate each one into two categories, usable items and weapons. Then the output for the shop, after all checking currency of the player to allow to buy any item.
+Source: Java HashMap https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html
+Modified by: Ariel Penaloza
+Changes: Implemented economy using String item names to custom Weapon objects and Integer prices depends on items, adding logic to validate the player's money before purchase.
+*/
+
 package game;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -27,13 +36,13 @@ public class Shop {
 		boolean shopping = true;
 		while(shopping) {
 			System.out.println("\n========= SYSTEM SHOP =========");
-			System.out.println("Your Yen: " + player.getYen());
-			System.out.println("1. Healing Potion (Restore HP) - " + itemPrices.get("Healing Potion") + " Yen");
-			System.out.println("2. Experience Crystal (+150 XP) - " + itemPrices.get("Experience Crystal") + " Yen");
-			System.out.println("3. Extra Stat Point (+1 Stat) - " + itemPrices.get("+1 Stats Points") + " Yen");
-			System.out.println("4. Steel Dagger - " + itemPrices.get("Steel Dagger") + " Yen");
-			System.out.println("5. Longsword - " + itemPrices.get("Longsword") + " Yen");
-			System.out.println("6. Dragon Dagger - " + itemPrices.get("Dragon Dagger") + " Yen");
+			System.out.println("Your Yen: " + player.getYen() + " ¥ ");
+			System.out.println("1. Healing Potion (Restore HP) - " + itemPrices.get("Healing Potion") + " ¥ Yen");
+			System.out.println("2. Experience Crystal (+150 XP) - " + itemPrices.get("Experience Crystal") + " ¥ Yen");
+			System.out.println("3. Extra Stat Point (+1 Stat) - " + itemPrices.get("+1 Stats Points") + " ¥ Yen");
+			System.out.println("4. Steel Dagger - " + itemPrices.get("Steel Dagger") + " ¥ Yen");
+			System.out.println("5. Longsword - " + itemPrices.get("Longsword") + " ¥ Yen");
+			System.out.println("6. Dragon Dagger - " + itemPrices.get("Dragon Dagger") + " ¥ Yen");
 			System.out.println("7. Leave Shop");
 			System.out.print("Select a Number: ");
 			

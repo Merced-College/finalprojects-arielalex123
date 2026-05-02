@@ -1,3 +1,12 @@
+/*
+Author: Ariel Penaloza
+Class: Inventory.java
+Description: Manages the player weapon inventory using arrays also selection sort and binary search algorithms
+Source: Selection Sort and Binary Search (https://dev.to/chinonsoike/understanding-selection-sort-algorithm-with-examples-in-java-1nia / https://www.geeksforgeeks.org/dsa/binary-search/)
+Modified by: Ariel Penaloza
+Changes: Algorithms change and used to organized weapon damage, array of custom weapon objects
+*/
+
 package game;
 
 public class Inventory {

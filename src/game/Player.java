@@ -1,3 +1,12 @@
+/*
+Author: Ariel Penaloza
+Class: Player.java
+Description: Stores and manages the player stats, currency, experiences, weapon.
+Source: https://medium.com/codex/object-oriented-principles-explained-2d1d4bdd3be7
+Modified by: Ariel Penaloza
+Changes: The use of getters and setters the logic and scale for stadistics 
+*/
+
 package game;
 
 public class Player {
